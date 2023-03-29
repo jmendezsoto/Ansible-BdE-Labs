@@ -1,0 +1,14 @@
+---
+- name: compliance check for STIG rules, packages, simplified
+  hosts: all
+
+  tasks:
+  - name: "SCORED | 1.1.1.2 | PATCH | Remove freevxfs module"
+    modprobe:
+      name: freevxfs
+      state: absent
+
+  - name: "SCORED | 5.1.1 | PATCH | Ensure cron daemon is enabled"
+    service:
+      name: crond
+      enabled: yes
