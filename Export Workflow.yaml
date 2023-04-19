@@ -1,11 +1,11 @@
 - name: Export Workflow
-  hosts: localhost
+  hosts: 192.168.1.69
   connection: local
   gather_facts: false
   collections:
     - ansible.controller
   environment:
-     CONTROLLER_HOST: https://localhost
+     CONTROLLER_HOST: https://192.168.1.69
      CONTROLLER_USERNAME: admin
      CONTROLLER_PASSWORD: root
      CONTROLLER_VERIFY_SSL: False
